@@ -72,9 +72,6 @@ class getNodeLTS {
   }
 
   json () {
-    console.log(JSON.stringify(
-      this.getActive()
-    ))
     return this.getActive();
   }
 
