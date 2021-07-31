@@ -83,7 +83,7 @@ class getNodeLTS {
     ))
     let active = this.getActive()
     for (const i in active){
-	ative[i] = `${active[i]}.x`    
+	atcive[i] = `${active[i]}.x`    
     }
     return active
   }
