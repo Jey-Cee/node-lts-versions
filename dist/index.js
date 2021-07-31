@@ -81,6 +81,7 @@ class getNodeLTS {
     console.log(JSON.stringify(
       this.getActive()
     ))
+    return this.getActive()
   }
 
   yaml () {
