@@ -1,5 +1,5 @@
-name: Node LTS versions
-author: Matt Simerson
+name: Node LTS versions 2
+author: Matt Simerson, Jey Cee
 description: Get list of maintained LTS node.js versions (active + maintenance)
 runs:
   using: 'node12'
