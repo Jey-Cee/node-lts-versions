@@ -81,7 +81,11 @@ class getNodeLTS {
     console.log(JSON.stringify(
       this.getActive()
     ))
-    return this.getActive()
+    let active = this.getActive()
+    for (const i in active){
+	ative[i] = `${active[i]}.x`    
+    }
+    return active
   }
 
   yaml () {
