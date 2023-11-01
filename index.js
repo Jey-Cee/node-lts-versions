@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-
-const nodeVersionData = require('node-version-data') // used by nodejs.org
 const semver = require('semver')
 
 class getNodeLTS {
@@ -121,6 +119,27 @@ class getNodeLTS {
         new Date(input.getFullYear() + this.expire.years, input.getMonth() + this.expire.months + 1, 0).getDate()
       )
     );
+  }
+}
+
+async nodeVersionData () {
+    const nodeOrg  = `https://nodejs.org/download/release`
+    const response = await fetch(`${nodeOrg}/index.json`);
+    const data     = await response.json();
+
+    if (!Array.isArray(data))
+      throw new Error('Could not fetch Node.js version data from nodejs.org')
+
+    data.forEach((d) => {
+      d.name = 'Node.js'
+      d.url  = `${nodeOrg}/${d.version}/`
+    })
+
+    data.sort(function (a, b) {
+      return semver.compare(b.version, a.version)
+    })
+
+    return data
   }
 }
 
