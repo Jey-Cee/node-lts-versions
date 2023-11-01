@@ -24,7 +24,7 @@ class getNodeLTS {
         return resolve()
       }
 
-      nodeVersionData((err, versions) => {
+      this.nodeVersionData((err, versions) => {
         if (err) {
           console.error('Download error')
           console.error(err.stack)
@@ -120,9 +120,8 @@ class getNodeLTS {
       )
     );
   }
-}
 
-async nodeVersionData () {
+  async nodeVersionData () {
     const nodeOrg  = `https://nodejs.org/download/release`
     const response = await fetch(`${nodeOrg}/index.json`);
     const data     = await response.json();
@@ -142,5 +141,7 @@ async nodeVersionData () {
     return data
   }
 }
+
+
 
 module.exports = new getNodeLTS()
