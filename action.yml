@@ -2,7 +2,7 @@ name: Node LTS versions 2
 author: Matt Simerson, Jey Cee
 description: Get list of maintained LTS node.js versions (active + maintenance)
 runs:
-  using: 'node12'
+  using: 'node20'
   main: 'dist/index.js'
 outputs:
   lts:
